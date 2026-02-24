@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Secret Code</title>
+    <style>
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+        }
+
+        .box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        input{
+            padding:10px;
+            width:200px;
+            border-radius:8px;
+            border:1px solid #ccc;
+            margin-top:15px;
+        }
+
+        button{
+            margin-top:15px;
+            padding:10px 20px;
+            border:none;
+            background:#ff4b5c;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#e8434f;
+        }
+
+        .error{
+            color:red;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Enter Our Secret Code 💖</h2>
+        <input type="password" id="code" placeholder="Enter code">
+        <br>
+        <button onclick="checkCode()">Unlock</button>
+        <p class="error" id="error"></p>
+    </div>
+
+    <script>
+        function checkCode(){
+            var correctCode = "26022025"; // CHANGE THIS
+            var userCode = document.getElementById("code").value;
+
+            if(userCode === correctCode){
+                window.location.href = "landing_page.html"; 
+            } else {
+                document.getElementById("error").innerText = "Wrong code ❤️ Try again! Hint - Very Special Day";
+            }
+        }
+    </script>
+
+</body>
+</html>
